@@ -1,15 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+        * {
+            font-family: "Fira Code", serif;
+            padding-left: 10px;
+        }
+
+        body {
+            background-color: #000;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: wheat;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            position: relative;
+            list-style: circle;
+            font-size: xx-large;
+            margin-bottom: 25px;
+            display: flex;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        ul li span {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-    <a href="1-day-pixel-art-generator/pixel-art-generator.html">Day 1</a>
-    <br>
-    <a href="2-day-text-editor/text-editor.html">Day 2</a>
-   
+    <h1>100 Days of JS Practices</h1>
+    <ul id="my-list">
+        <li>
+            <a href="1-day-pixel-art-generator/pixel-art-generator.html">Day 1</a>
+        </li>
+        <li>
+            <a href="2-day-text-editor/text-editor.html">Day 2</a>
+        </li>
+    </ul>
+
+
+    <script>
+        const symbols = [
+            '🔥', '⭐', '💫', '🌟', '⚡', '💥', '✨', '💡',
+            '🌈', '🌌', '☄️', '🌠', '🎇', '🎆', '🌅', '🌄',
+            '💎', '🎨', '🎯', '🎲', '🎸', '🎪', '🎭',
+            '🚀', '🛸', '🌠', '✈️',
+            '👾', '🤖', '🕹️', '🖥️',
+            '🔮', '⚔️', '🎭', '🪄', '🗝️',
+            '🎨', '🎭', '🎪', '🎼', '🎵',
+            '💝', '💖', '💗', '💓', '💞', '💕', '♥️',
+            '🔰', '🏆', '🥇', '👑', '💫', '🌺',
+            '🦋', '🌸', '🍀', '🌹', '🎪', '🎯',
+            '💯', '🆚', '💢', '⭕', '❌', '㊗️', '㊙️',
+            '🌍', '🌎', '🌏', '🌑', '🌒', '🌓', '🌔', '🌕',
+            '🔱', '⚜️', '🔰', '⚠️', '☢️', '☣️'
+        ];
+        const listItems = document.querySelectorAll('#my-list li');
+
+        listItems.forEach(li => {
+            const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+            li.style.setProperty('--random-symbol', randomSymbol);
+            li.insertAdjacentHTML('afterbegin', `<span>${randomSymbol}</span>`);
+        });
+    </script>
 </body>
+
 </html>
