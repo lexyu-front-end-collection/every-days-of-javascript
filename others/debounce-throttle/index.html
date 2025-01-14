@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce && Throttle</title>
+
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .pokemon-img {
+            max-width: 200px;
+        }
+
+        .pokemon-input {
+            padding: 8px;
+            font-size: 16px;
+            width: 350px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        input:invalid {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" name="" id="">
+    <div>
+        <b>Default:</b>
+        <span id="default"></span>
+    </div>
+    <div>
+        <b>Debounce:</b>
+        <span id="debounce"></span>
+    </div>
+    <div>
+        <b>Throttle:</b>
+        <span id="throttle"></span>
+    </div>
+
+
+    <div class="container">
+        <h2>Pokemon Finder</h2>
+        <!-- 新增的統計顯示 -->
+        <div class="stats">
+            <p>API 呼叫次數: <span id="api-count">0</span></p>
+            <p>Input 觸發次數: <span id="input-count">0</span></p>
+        </div>
+        <div>
+            <label for="pokemon" id="" style="font-weight: 900; font-size:larger; margin: 10px;">Debounce: </label>
+            <input class="pokemon-input" id="pokemon" type="number" placeholder="Enter Pokemon number (1-1025)" min="1"
+                max="1025" required>
+        </div>
+        <div id=" result">
+            <img class="pokemon-img" src="" style="display: none">
+            <p class="error"></p>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
