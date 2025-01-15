@@ -1,7 +1,5 @@
-const input = document.querySelector("input")
 const defaultText = document.getElementById("default")
 const debounceText = document.getElementById("debounce")
-const throttleText = document.getElementById("throttle")
 const pokemonInput = document.querySelector('.pokemon-input')
 const pokemonImg = document.querySelector('.pokemon-img')
 const errorText = document.querySelector('.error')
@@ -25,11 +23,6 @@ const updateDebounceText = debounce(text => {
     debounceText.textContent = text
 }, 250)
 
-
-input.addEventListener("input", e => {
-    defaultText.textContent = e.target.value
-    updateDebounceText(e.target.value)
-})
 
 // ------------------------------------------------->
 let apiCallCount = 0
