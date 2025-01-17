@@ -18,14 +18,31 @@ deno run xxx.ts
 - Functions
 - Object Types
 - Type Manipulation
-    - Creating Types from Types
     - Generics
+        - Working with Generic Type Variables
+        - Generic Types
+        - Generic Classes
+        - Generic Constraints
+        - Using Type Parameters in Generic Constraints
+        - Using Class Types in Generics
+        - Generic Parameter Defaults
+        - Variance Annotations
     - Keyof Type Operator
     - Typeof Type Operator
     - Indexed Access Types
     - Conditional Types
     - Mapped Types
+        - Mapping Modifiers
+        - Key Remapping via as
+        - Further Exploration
     - Template Literal Types
+        - String Unions in Types
+        - Inference with Template Literals
+        - Intrinsic String Manipulation Types
+        - Uppercase<StringType>
+        - Lowercase<StringType>
+        - Capitalize<StringType>
+        - Uncapitalize<StringType>
 - Classes
 - Enums
 - Type Compatibility
