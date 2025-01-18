@@ -1,7 +1,8 @@
 # Topics
 
 ```bash
-deno run xxx.ts
+cd $dir && deno $fileName
+deno task start/dev
 ```
 
 `--allow-read`: 允許檔案系統讀取操作
