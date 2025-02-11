@@ -7,7 +7,7 @@ interface User {
 }
 
 class HiClass {
-    constructor(public name: string, private age: number) {}
+    constructor(public name: string, private age: number) { }
     greet() {
         return `Hello, ${this.name}`;
     }
@@ -32,6 +32,15 @@ const partialUser: Partial<User> = {
     name: 'John'
 };
 printType('Partial', partialUser);
+
+function merge<T>(target: T, source: Partial<T>): T {
+    return { ...target, ...source };
+}
+
+const user: User = { id: 1, name: "Alice", email: "alice@example.com" };
+const updatedUser = merge(user, { email: "new@example.com" });
+
+printType("Partial 2", updatedUser)
 
 // Required
 const requiredUser: Required<User> = {
@@ -63,14 +72,14 @@ type UserBasicInfo = Pick<User, 'name' | 'email'>;
 const basicInfo: UserBasicInfo = {
     name: 'John',
     email: 'john@example.com',
-	// age: 11 // error
+    // age: 11 // error
 };
 printType('Pick', basicInfo);
 
 // Omit
 type UserWithoutId = Omit<User, 'id'>;
 const userNoId: UserWithoutId = {
-	// id: 11, // error
+    // id: 11, // error
     name: 'John',
     email: 'john@example.com'
 };
